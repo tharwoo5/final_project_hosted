@@ -1,0 +1,22 @@
+
+
+<nav>
+  <ul>
+    <li><a [routerLink]="['/dashboard']">Home</a></li>
+    <pb-login-button
+    *ngIf="(auth.isAuthenticated$ | async) == false"
+    ></pb-login-button>
+
+    <pb-logout-button
+    *ngIf="(auth.isAuthenticated$ | async) "
+    ></pb-logout-button> |
+
+    <button [routerLink] = "['/homepage']" *ngIf="(auth.isAuthenticated$ | async) ">DashBoard</button> |
+
+    <label *ngIf="(auth.isAuthenticated$ | async) ">Profile</label> -
+
+    <label *ngIf="auth.user$ | async as user">{{ user.name }}</label>
+
+
+  </ul>
+</nav>
