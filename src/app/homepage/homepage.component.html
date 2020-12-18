@@ -1,10 +1,31 @@
 <pb-menu></pb-menu>
 <main class="center" id="main">
   <div class="page-area">
+
     <div>
+      <button mat-raised-button (click)="budgetAmount()">Budget Amount</button><br>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <input matInput autocomplete="off" placeholder="Budget Amount"  id="Budget_Amount">
+    </mat-form-field>
+
+    </div><br>
+
+    <div style="font-weight:bold">
+      Budget Amount : {{displayBudgetAmount}}
+    </div><br>
+
+    <div style="font-weight:bold">
       Amount Spent : {{amountSpent}}
-    </div>
+    </div><br>
+
+    <div style="font-weight:bold">
+      Amount Budget Left : {{amountBudgetLeft}}
+    </div><br>
+
+
     <br>
+    <br>
+
 
     <!-- <pb-article color="blue">
       <h1>Stay on track</h1>

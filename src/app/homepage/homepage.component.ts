@@ -24,6 +24,8 @@ export class HomepageComponent implements OnInit {
     labels: []
 };
   amountSpent: number;
+  displayBudgetAmount: any;
+  amountBudgetLeft: number;
 
 
 
@@ -134,6 +136,13 @@ removeOldCost(): void {
   console.log(this.profileJson)
 }
 
+budgetAmount(): void{
+  const budgetAmount = (document.getElementById('Budget_Amount')as HTMLTextAreaElement).value;
+  this.displayBudgetAmount = budgetAmount;
+
+  this.amountBudgetLeft = (this.displayBudgetAmount - this.amountSpent);
+
+}
 
 
 }
